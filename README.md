@@ -1,18 +1,7 @@
-# ieee754 [![travis](https://img.shields.io/travis/feross/ieee754.svg)](https://travis-ci.org/feross/ieee754) [![npm](https://img.shields.io/npm/v/ieee754.svg)](https://npmjs.org/package/ieee754) [![downloads](https://img.shields.io/npm/dm/ieee754.svg)](https://npmjs.org/package/ieee754)
 
 ### Read/write IEEE754 floating point numbers from/to a Buffer or array-like object.
 
-[![testling badge](https://ci.testling.com/feross/ieee754.png)](https://ci.testling.com/feross/ieee754)
-
-## install
-
-```
-npm install ieee754
-```
-
 ## methods
-
-`var ieee754 = require('ieee754')`
 
 The `ieee754` object has the following functions:
 
@@ -33,6 +22,8 @@ The arguments mean the following:
 ## what is ieee754?
 
 The IEEE Standard for Floating-Point Arithmetic (IEEE 754) is a technical standard for floating-point computation. [Read more](http://en.wikipedia.org/wiki/IEEE_floating_point).
+
+This version of this package has been modified to work with older and non-Node.JS style JavaScript environments, such as Sphere. This version is intended to be used as a component of the TurboSphere runtime.
 
 ## mit license
 
