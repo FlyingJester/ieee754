@@ -1,4 +1,7 @@
-exports.read = function(buffer, offset, isLE, mLen, nBytes) {
+if(typeof ieee754 == "undefined")
+    var ieee754 = {};
+
+ieee754.read = function(buffer, offset, isLE, mLen, nBytes) {
   var e, m,
       eLen = nBytes * 8 - mLen - 1,
       eMax = (1 << eLen) - 1,
@@ -31,7 +34,7 @@ exports.read = function(buffer, offset, isLE, mLen, nBytes) {
   return (s ? -1 : 1) * m * Math.pow(2, e - mLen);
 };
 
-exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
+ieee754.write = function(buffer, value, offset, isLE, mLen, nBytes) {
   var e, m, c,
       eLen = nBytes * 8 - mLen - 1,
       eMax = (1 << eLen) - 1,
@@ -82,3 +85,13 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
 
   buffer[offset + i - d] |= s * 128;
 };
+
+if(typeof Turbo == "undefined")
+var Turbo = {};
+
+Turbo.Float32FromBinary = function(from){
+
+    var buffer = [(from>>0)&0xFF, (from>>8)&0xFF, (from>>16)&0xFF, (from>>24)&0xFF];
+
+    return ieee754.read(buffer, 0, false /* <= Is this right? */, 23, 4);
+}
