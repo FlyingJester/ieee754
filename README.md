@@ -28,3 +28,4 @@ This version of this package has been modified to work with older and non-Node.J
 ## mit license
 
 Copyright (C) 2013 [Feross Aboukhadijeh](http://feross.org) & Romain Beauxis.
+Copyright (C) 2014 [Martin McDonough](https://github.com/FlyingJester)
